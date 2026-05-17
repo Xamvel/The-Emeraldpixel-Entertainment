@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-716fe589-35f0-41bb-989d-4f6b2e20245e" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -455.89 1823.56 2279.45">
+  <defs>
+    <radialGradient id="uuid-029300eb-1060-4849-b6b0-9c624d9502de" cx="911.78" cy="911.78" fx="911.78" fy="911.78" r="911.78" gradientUnits="userSpaceOnUse">
+      <stop offset="44%" stop-color="#c4fdfc" stop-opacity=".9"/>
+    <stop offset="51%" stop-color="#54ca89" stop-opacity=".8"/>
+    <stop offset="69%" stop-color="#103f1b" stop-opacity=".8"/>
+    <stop offset="80%" stop-color="#033c10" stop-opacity=".3"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="uuid-a9c15c78-2f5c-458a-a62f-98036e0be389" data-name="Layer 1">
+    <rect x="0" width="1823.56" height="1823.56" style="fill: url(#uuid-029300eb-1060-4849-b6b0-9c624d9502de);"/>
+  </g>
+</svg>

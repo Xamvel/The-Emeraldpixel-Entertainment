@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Emeraldpixel Entertainment</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="color-scheme" content="dark" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Outerra Game UI" />
+  <meta name="robots" content="noindex" />
+  <link rel="preload" href="assets/Lexend-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="icon" href="assets/Logo.png" />
+  <meta name="theme-color" content="#131315" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="row row-top">
+      <h1 class="logo logo-gradient" >The Emeraldpixel Entertainment</h2>
+        <img src="demo_data/img/emeraldLogo.jpg" alt="emeraldLogo" class="site-logo">
+
+    </div>
+
+    <nav class="row row-nav" aria-label="Primary">
+      <div class="left">
+        <button type="button" class="nav-btn active" data-route="play" aria-current="page" style="display: none;">Play</button>
+        <button type="button" class="nav-btn" data-route="start-container" >Start</button>
+        <button type="button" class="nav-btn" data-route="library" >Library</button>
+        <button type="button" class="nav-btn" data-route="about-container" >About us</button>
+        <button type="button" class="nav-btn" data-route="license-container" >Lizenz</button>
+        <button type="button" class="nav-btn" data-route="contact-container" >Contact</button>
+        <button type="button" class="nav-btn" data-route="accessibility-container">Accessibility</button>
+        <button type="button" class="nav-btn" data-route="privacy-container">Privacy</button>
+        
+        <button type="button" class="nav-btn" data-route="settings" style="display: none;">Settings</button>
+
+        <input class="search-input" type="search" placeholder="Search Games..." aria-label="Search" />
+
+        <div class="custom-select" id="sort-custom">
+          <select class="sort-select" aria-label="Sort by">
+            <option value="az">A–Z</option>
+            <option value="za">Z–A</option>
+            <option value="release">Release Date</option>
+            <option value="updated">Last Updated</option>
+            <option value="size">Size</option>
+          </select>
+          <button type="button" id ="sortOfSort"class="custom-select__button tooltip" aria-haspopup="listbox" aria-expanded="false" 
+          data-tooltip="Sort games by name, date, or size" ></button>
+
+          <div class="custom-select__list" role="listbox"></div>
+        </div>
+
+        <label id="priorityLabel">
+          <button title ="Favorites first" type="button"  id="favoritePriority" class = "active" > ★</button>  
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <main id="app" tabindex="-1">
+    <section id="view-play" data-view="play" aria-labelledby="h-play" class ="active">
+      <h2 id="h-play" class="visually-hidden">Play</h2>
+      <div id="view-play-grid" data-view="play"  class ="active">
+        <!-- Content populated by JS -->
+
+       </div>
+       <div id="view-play-list" data-view="play"  class ="list-mode">
+        <!-- Content populated by JS -->
+       </div>
+
+       
+    </section>
+    <section id="view-library" data-view="library" hidden aria-labelledby="h-library">
+      <h2 id="h-library" class="visually-hidden">Library</h2>
+      <div id="view-library-grid" data-view="library" class ="active" >
+      <!-- Content populated by JS -->
+
+    </div>
+      <div id="view-library-list" data-view="library" class ="list-mode" >
+      <!-- Content populated by JS -->
+
+      </div>
+    </section>
+    <section id="view-detail" data-view="detail" hidden aria-labelledby="h-detail">
+      <h2 id="h-detail" class="visually-hidden">Details</h2>
+
+      <!-- Content populated by JS -->
+    </section>
+    <section id="view-settings" data-view="settings" hidden aria-labelledby="h-settings">
+      <h2 id="h-settings" class="visually-hidden">Settings</h2>
+      <!-- Content populated by JS -->
+    </section>
+    <section id="modal-container" data-view="modal-container" hidden aria-labelledby="h-modal-container">
+      <h2 id="h-modal-container" class="visually-hidden">modal-container</h2>
+      <!-- Content populated by JS -->
+    </section>
+    <section id="start-container"
+         data-view="start-container"
+         hidden
+         aria-labelledby="h-start-container"
+         class="start-container">
+
+  <h2 id="h-start-container" class="hero-title">
+    Welcome to The Emeraldpixel Entertainment
+  </h2>
+
+  <p class="hero-text">
+    The Emeraldpixel Entertainment is an indie game platform where players
+    can discover, purchase and play unique games directly from the browser.
+  </p>
+
+  <div class="hero-links">
+
+</div>
+
+  <div class="hero-grid">
+
+    <article class="hero-card">
+      <h3>Our Platform</h3>
+      <p>
+        Our webshop combines a digital game store, launcher and library system
+        into one platform.
+      </p>
+    </article>
+
+    <article class="hero-card">
+      <h3>Features</h3>
+      <p>
+        Players can browse games, manage their library, save favorites,
+        load save files and explore detailed game pages.
+      </p>
+    </article>
+
+    <article class="hero-card">
+      <h3>Target Audience</h3>
+      <p>
+        The platform is designed for indie game fans, sandbox players
+        and people who enjoy creative experimental games.
+      </p>
+    </article>
+
+    <article class="hero-card">
+      <h3>Business Model</h3>
+      <p>
+        Games are sold through one-time purchases and selected titles
+        may include optional premium content.
+      </p>
+    </article>
+
+  </div>
+  <button type="button"
+          class="hero-link-btn AccessibleButton"
+          data-route="accessibility-container">
+    Accessibility Statement
+  </button>
+  <button type="button"
+          class="hero-link-btn PrivateButton"
+          data-route="privacy-container">
+    Privacy
+  </button>
+</section>
+
+
+<section class="about-container" data-view="about-container" aria-labelledby="h-about-container">
+
+  <div class="hero-brand">
+    <img src="demo_data/img/emeraldLogo.jpg" alt="Emeraldpixel logo" class="brand-logo">
+
+    <div class="hero-text">
+      <h1>The Emeraldpixel Entertainment</h1>
+      <p>
+        The Emeraldpixel Entertainment is an independent digital gaming platform
+        focused on creative indie games, sandbox experiences and experimental
+        interactive entertainment.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- ====================================================== -->
+  <!-- ABOUT THE COMPANY -->
+  <!-- ====================================================== -->
+
+  <section class="about-section">
+    <h2>About the Company</h2>
+
+    <p>
+      The Emeraldpixel Entertainment is a game development company that provides an online platform for its games.
+      The platform combines a
+      digital game store, game launcher and library management system into one
+      modern gaming ecosystem.
+    </p>
+
+    
+
+  </section>
+  
+
+
+  <!-- ====================================================== -->
+  <!-- BRAND FORMS -->
+  <!-- ====================================================== -->
+
+  <section class="about-section">
+    <h2>Trademark Forms</h2>
+
+
+    <!-- WORD MARK -->
+    <article class="brand-card">
+      <h3>1. Word Mark</h3>
+
+      <div class="brand-type">Trademark Type: Word Mark</div>
+
+      <p>
+        The word mark of the company is
+        <strong>“The Emeraldpixel Entertainment”</strong>.
+      </p>
+
+      <p>
+        The term “Emeraldpixel” combines the concepts of digital pixel art,
+        creativity and emerald-inspired futuristic aesthetics.
+      </p>
+
+      <p>
+        The name was selected to create a unique identity connected to
+        independent gaming, modern technology and immersive virtual worlds.
+      </p>
+
+      <div class="nizza-box">
+        <h4>Assigned Nizza Classes</h4>
+        <ul>
+          <li><strong>Class 9:</strong> Computer software and video games</li>
+          <li><strong>Class 41:</strong> Entertainment and online gaming services</li>
+          <li><strong>Class 42:</strong> Software development and digital platforms</li>
+        </ul>
+      </div>
+    </article>
+
+
+    <!-- FIGURATIVE MARK -->
+    <article class="brand-card">
+      <h3>2. Figurative Mark</h3>
+
+      <div class="brand-type">Trademark Type: Figurative Mark / Image Mark</div>
+
+      <img src="demo_data/img/emeraldLogo.jpg" alt="Emeraldpixel figurative trademark" class="figurative-logo">
+
+      <p>
+        The figurative mark consists of a stylized emerald crystal symbol.
+      </p>
+
+      <p>
+        The geometric crystal design represents creativity, digital worlds,
+        technology and exploration within interactive entertainment.
+      </p>
+
+      <p>
+        The logo is used across the platform interface, navigation areas,
+        promotional material and launcher components in order to strengthen
+        visual recognition.
+      </p>
+
+      <div class="nizza-box">
+        <h4>Assigned nizza Classes</h4>
+        <ul>
+          <li><strong>Class 9:</strong> Gaming software and downloadable applications</li>
+          <li><strong>Class 41:</strong> Digital entertainment services</li>
+        </ul>
+      </div>
+    </article>
+
+
+    <!-- COLOR MARK -->
+<article class="brand-card">
+  <h3>3. Color Mark</h3>
+
+  <div class="brand-type">Trademark Type: Color Mark</div>
+
+  <div class="color-preview">
+    <div class="color-box light-cyan"></div>
+    <div class="color-box emerald"></div>
+    <div class="color-box deep-green"></div>
+    <div class="color-box dark-green"></div>
+  </div>
+
+  <p>
+    The Emeraldpixel Entertainment uses a custom emerald-inspired gradient
+    color identity consisting of light cyan, vibrant emerald green, deep
+    forest green and dark atmospheric tones.
+  </p>
+
+  <p>
+    The color system was designed to create a futuristic and immersive gaming
+    atmosphere while maintaining readability, accessibility and visual
+    consistency across the platform.
+  </p>
+
+  <p>
+    The gradient transitions symbolize creativity, digital worlds,
+    technological innovation, exploration and immersive gameplay experiences.
+  </p>
+
+  <div class="nizza-box">
+    <h4>Primary Brand Colors</h4>
+
+    <ul>
+      <li><strong>#C4FDFC</strong> – Light Cyan</li>
+      <li><strong>#54CA89</strong> – Emerald Green</li>
+      <li><strong>#103F1B</strong> – Deep Forest Green</li>
+      <li><strong>#033C10</strong> – Dark Emerald Green</li>
+    </ul>
+  </div>
+</article>
+</section>
+</section>
+
+<!-- ====================================================== -->
+<!-- USER RIGHTS -->
+<!-- ====================================================== -->
+
+<section class="license-container" data-view="license-container" hidden aria-labelledby="h-license-container">
+
+  <div class="license-card">
+    <h2>1. Rights Granted to Users</h2>
+
+    <p>
+      By creating an account or using this platform, users receive a
+      limited, non-exclusive and non-transferable right to access,
+      purchase and play games available on The Emeraldpixel Entertainment
+      platform for personal entertainment purposes.
+    </p>
+
+    <p>
+      Users may:
+    </p>
+
+    <ul>
+      <li>browse and access games available on the platform</li>
+      <li>purchase digital games and premium content</li>
+      <li>download games</li>
+      <li>launch and play purchased games through their account</li>
+      <li>save and load game progress</li>
+      <li>receive game patches</li>
+    </ul>
+
+    <p>
+      Purchased games remain linked to the user account that completed
+      the transaction unless otherwise stated.
+    </p>
+
+    
+  </div>
+
+
+  <!-- ====================================================== -->
+  <!-- DIGITAL CONTENT RIGHTS -->
+  <!-- ====================================================== -->
+
+  <div class="license-card">
+    <h2>2. Digital Ownership and Access</h2>
+
+    <p>
+      Purchasing a game on this platform grants users a license to use
+      the digital product and does not transfer ownership of the game,
+      software or intellectual property.
+    </p>
+    
+  </div>
+
+
+  
+
+
+  <!-- ====================================================== -->
+  <!-- REFUNDS -->
+  <!-- ====================================================== -->
+
+  <div class="license-card">
+    <h2>3. Purchases and Refunds</h2>
+
+    <p>
+      Digital purchases made through the platform are processed using
+      supported payment systems.
+    </p>
+
+    <p>
+      Refund requests may be accepted in certain situations, including:
+    </p>
+
+    <ul>
+      <li>technical problems preventing normal use</li>
+      <li>accidental duplicate purchases</li>
+      <li>failed content delivery</li>
+      <li>unauthorized transactions reported in time</li>
+    </ul>
+
+  </div>
+
+
+  <!-- ====================================================== -->
+  <!-- PLATFORM PROTECTION -->
+  <!-- ====================================================== -->
+
+  <div class="license-card">
+    <h2>4. Platform Protection and Fair Use</h2>
+
+    <p>
+      To maintain platform stability and fair access for all users,
+      certain activities are prohibited.
+    </p>
+
+    <p>
+      Users may not:
+    </p>
+
+    <ul>
+      <li>copy, redistribute or resell games</li>
+      <li>modify, reverse engineer platform</li>
+      <li>bypass payment systems or access restrictions</li>
+      <li>use cheats, bots or automated abuse systems</li>
+      <li>attempt unauthorized access to accounts or games</li>
+      <li>use the platform for commercial purposes</li>
+    </ul>
+
+    <p>
+      Violations may result in temporary restrictions, suspension or
+      permanent account termination.
+    </p>
+  </div>
+
+
+  <!-- ====================================================== -->
+  <!-- LIABILITY -->
+  <!-- ====================================================== -->
+
+  <div class="license-card">
+    <h2>5. Liability Limitations</h2>
+
+
+    <p>
+      While we aim to provide stable and secure services, uninterrupted
+      availability cannot be guaranteed at all times.
+    </p>
+
+    <p>
+      The Emeraldpixel Entertainment is not responsible for:
+    </p>
+
+    <ul>
+      <li>temporary outages or maintenance periods</li>
+      <li>loss of data or game progress</li>
+      <li>hardware compatibility problems</li>
+      <li>service interruptions</li>
+    </ul>
+
+    <p>
+      Users are responsible for maintaining the security of their own
+      devices and account credentials.
+    </p>
+  </div>
+
+
+  <!-- ====================================================== -->
+  <!-- FINAL -->
+  <!-- ====================================================== -->
+
+  <div class="license-card">
+    <h2>6. Final Notes</h2>
+
+    <p>
+      This platform agreement describes the general rights and
+      responsibilities connected to the use of The Emeraldpixel
+      Entertainment platform.
+    </p>
+
+    <p>
+      Platform policies may change over time to improve security,
+      functionality and legal compliance.
+    </p>
+
+    <p>
+      Continued use of the platform after policy updates means that
+      users accept the updated terms and conditions.
+    </p>
+
+    <p>
+      By accessing or using the platform, users agree to follow all
+      platform rules, community standards and applicable laws.
+    </p>
+  </div>
+
+</section>
+<section id="accessibility-container"
+         data-view="accessibility-container"
+         hidden
+         aria-labelledby="h-accessibility-container"
+         class="accessibility-container">
+
+  <h2 id="h-accessibility-container" class="visually-hidden">
+    Accessibility Statement
+  </h2>
+
+  <div class="accessibility-hero">
+
+    <h1 class="accessibility-title">
+      Accessibility Statement
+    </h1>
+
+    <p class="accessibility-intro">
+      The Emeraldpixel Entertainment aims to provide an accessible
+      and user-friendly platform for all users regardless of technical
+      limitations or disabilities.
+    </p>
+
+  </div>
+
+
+  <!-- ====================================================== -->
+  <!-- GENERAL STATEMENT -->
+  <!-- ====================================================== -->
+
+  <section class="accessibility-card">
+
+    <h2>1. Accessibility Statement</h2>
+
+    <p>
+      This website was designed with accessibility and usability in mind.
+      The platform aims to provide equal access to digital content and
+      interactive features for all users.
+    </p>
+
+    <p>
+      Accessibility features are continuously reviewed and improved during
+      development.
+    </p>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- WCAG STATUS -->
+  <!-- ====================================================== -->
+
+  <section class="accessibility-card">
+
+    <h2>2. Compliance Status</h2>
+
+    <p>
+      This website is partially compliant with the requirements of
+      WCAG 2.2 AA (Web Content Accessibility Guidelines).
+    </p>
+
+    <p>
+      The platform currently includes:
+    </p>
+
+    <ul>
+      <li>semantic HTML structure</li>
+      <li>alternative text for important images</li>
+    </ul>
+
+
+  </section>
+
+
+
+  <!-- ====================================================== -->
+  <!-- FEEDBACK -->
+  <!-- ====================================================== -->
+
+  <section class="accessibility-card">
+
+    <h2>3. Feedback and Contact Information</h2>
+
+    <p>
+      Users who experience accessibility barriers or technical issues
+      may contact the platform through the provided contact section.
+    </p>
+
+    <p>
+      Feedback regarding accessibility improvements is welcome.
+    </p>
+
+    <p>
+      Contact Email:
+      <br>
+      support@emeraldpixel.example
+    </p>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- ENFORCEMENT -->
+  <!-- ====================================================== -->
+
+  <section class="accessibility-card">
+
+    <h2>4. Enforcement Procedure</h2>
+
+    <p>
+      If users are not satisfied with the response to accessibility related
+      feedback, they may contact the relevant national accessibility or
+      consumer protection authorities.
+    </p>
+
+
+  </section>
+
+</section>
+<!-- ====================================================== -->
+<!-- PRIVACY POLICY PAGE -->
+<!-- ====================================================== -->
+
+<section id="privacy-container"
+         data-view="privacy-container"
+         hidden
+         aria-labelledby="h-privacy-container"
+         class="privacy-container">
+
+  <h2 id="h-privacy-container" class="visually-hidden">
+    Privacy Policy
+  </h2>
+
+  <div class="privacy-hero">
+
+    <h1 class="privacy-title">
+      Privacy Policy
+    </h1>
+
+    <p class="privacy-intro">
+      This Privacy Policy explains how The Emeraldpixel Entertainment
+      handles user information, cookies and platform-related data.
+    </p>
+
+  </div>
+
+
+  <!-- ====================================================== -->
+  <!-- DATA COLLECTION -->
+  <!-- ====================================================== -->
+
+  <section class="privacy-card">
+
+    <h2>1. Data Collection</h2>
+
+    <p>
+      The platform may process technical and interaction-related information
+      during normal website usage.
+    </p>
+
+    <p>
+      This may include:
+    </p>
+
+    <ul>
+      <li>browser information</li>
+      <li>device type</li>
+      <li>selected games and favorites</li>
+      <li>search input</li>
+      <li>playtime information</li>
+      <li>saved game preferences</li>
+    </ul>
+
+    <p>
+      Personal information submitted through optional contact forms may include:
+    </p>
+
+    <ul>
+      <li>email address</li>
+      <li>username</li>
+      <li>messages sent through support forms</li>
+    </ul>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- COOKIES -->
+  <!-- ====================================================== -->
+
+  <section class="privacy-card">
+
+    <h2>2. Cookies and Local Storage</h2>
+
+    <p>
+      The platform may use cookies or browser local storage technologies
+      to improve user experience and remember platform settings.
+    </p>
+
+    <p>
+      Cookies may be used for:
+    </p>
+
+    <ul>
+      <li>remembering interface settings</li>
+      <li>saving favorite games</li>
+      <li>maintaining session information</li>
+      <li>storing accessibility preferences</li>
+    </ul>
+
+    <p>
+      Users may disable cookies through their browser settings.
+    </p>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- ANALYTICS -->
+  <!-- ====================================================== -->
+
+  <section class="privacy-card">
+
+    <h2>3. Analytics and Usage Information</h2>
+
+    <p>
+      The platform may use basic analytics tools to better understand
+      how users interact with the website.
+    </p>
+
+    <p>
+      Analytics data may include:
+    </p>
+
+    <ul>
+      <li>visited pages</li>
+      <li>session duration</li>
+      <li>clicked interface elements</li>
+      <li>general platform interaction statistics</li>
+    </ul>
+
+    <p>
+      Analytics information is used only for improving usability,
+      accessibility and overall platform quality.
+    </p>
+
+  </section>
+
+
+
+  <!-- ====================================================== -->
+  <!-- USER RIGHTS -->
+  <!-- ====================================================== -->
+
+  <section class="privacy-card">
+
+    <h2>4. User Rights</h2>
+
+    <p>
+      Users may request information regarding stored personal data or ask
+      for the correction or deletion of submitted information where applicable.
+    </p>
+
+    <p>
+      Users may also contact the platform regarding privacy-related concerns.
+    </p>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- CONTACT -->
+  <!-- ====================================================== -->
+
+  <section class="privacy-card">
+
+    <h2>5. Contact Information</h2>
+
+    <p>
+      Privacy-related questions may be directed to:
+    </p>
+
+    <p>
+      privacy@emeraldpixel.example
+    </p>
+
+  </section>
+
+</section>
+<!-- ====================================================== -->
+<!-- CONTACT & IMPRINT PAGE -->
+<!-- ====================================================== -->
+
+<section id="contact-container"
+         data-view="contact-container"
+         hidden
+         aria-labelledby="h-contact-container"
+         class="contact-container">
+
+  <h2 id="h-contact-container" class="visually-hidden">
+    Contact & Imprint
+  </h2>
+
+  <div class="contact-hero">
+
+    <h1 class="contact-title">
+      Contact & Imprint
+    </h1>
+
+    <p class="contact-intro">
+      Contact information and legal company details for
+      The Emeraldpixel Entertainment.
+    </p>
+
+  </div>
+
+
+  <!-- ====================================================== -->
+  <!-- CONTACT -->
+  <!-- ====================================================== -->
+
+  <section class="contact-card">
+
+    <h2>1. Contact Information</h2>
+
+    <p>
+      Users may contact The Emeraldpixel Entertainment for support,
+      feedback or general platform-related questions.
+    </p>
+
+    <div class="contact-grid">
+
+      <div class="contact-item">
+        <h3>Email</h3>
+        <p>support@emeraldpixel.example</p>
+      </div>
+
+      <div class="contact-item">
+        <h3>Business Inquiries</h3>
+        <p>business@emeraldpixel.example</p>
+      </div>
+
+      <div class="contact-item">
+        <h3>Location</h3>
+        <p>Vienna, Austria</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- CONTACT FORM -->
+  <!-- ====================================================== -->
+
+  <section class="contact-card">
+
+    <h2>2. Contact Form</h2>
+
+    <p>
+      Users may also send messages directly through the platform.
+    </p>
+
+    <form class="contact-form">
+
+      <label>
+        Name
+        <input type="text" placeholder="Your name">
+      </label>
+
+      <label>
+        Email
+        <input type="email" placeholder="Your email">
+      </label>
+
+      <label>
+        Message
+        <textarea placeholder="Your message"></textarea>
+      </label>
+
+      <button type="submit" class="contact-submit">
+        Send Message
+      </button>
+
+    </form>
+
+  </section>
+
+
+  <!-- ====================================================== -->
+  <!-- IMPRINT -->
+  <!-- ====================================================== -->
+
+  <section class="contact-card">
+
+    <h2>3. Imprint</h2>
+
+    <div class="imprint-grid">
+
+      <div class="imprint-item">
+        <h3>Media Owner</h3>
+        <p>The Emeraldpixel Entertainment</p>
+      </div>
+
+      <div class="imprint-item">
+        <h3>Address</h3>
+        <p>
+          Emeraldpixel Street 12
+          <br>
+          1010 Vienna
+          <br>
+          Austria
+        </p>
+      </div>
+
+      <div class="imprint-item">
+        <h3>Contact</h3>
+        <p>
+          Email: support@emeraldpixel.example
+          <br>
+          Phone: +43 000 000000
+        </p>
+      </div>
+
+      <div class="imprint-item">
+        <h3>Business Area</h3>
+        <p>
+          Digital gaming platform and software development
+        </p>
+      </div>
+
+      <div class="imprint-item">
+        <h3>Memberships / Chamber</h3>
+        <p>
+          Fictional demonstration project created for university purposes.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  
+
+  </main>
+
+  <!-- Live regions and overlays -->
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="modal" aria-modal="true"></dialog>
+  <div id="sr-updates" class="visually-hidden" aria-live="polite"></div>
+
+  <!-- Templates -->
+  <template id="tpl-game-card">
+    <article class="game-card" data-id="">
+      <div class="game-cover-wrap square">
+        <img class="game-cover" alt="" />
+      </div>
+      <h3 class="game-title"></h3>
+      <p class="game-meta"></p>
+    </article>
+  </template>
+
+  <template id="tpl-game-row">
+    <div class="game-row" data-id="">
+      <span class="col-name"></span>
+      <span class="col-date"></span>
+      <span class="col-size"></span>
+      <button class="btn small" data-action="launch">Play</button>
+    </div>
+  </template>
+
+  <template id="tpl-settings-section">
+    <section class="settings-section">
+      <h2 class="settings-title"></h2>
+      <div class="settings-body"></div>
+    </section>
+  </template>
+
+  
+  <!-- One global tooltip element (reused for all targets) -->
+  <div id="tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <noscript>This UI requires JavaScript enabled.</noscript>
+  <script src="script.js" defer></script>
+</body>
+
+
+</html>
