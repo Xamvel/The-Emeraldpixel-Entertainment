@@ -2052,6 +2052,8 @@ function renderList(cardData,listView,playCardID){
   const listImg = document.createElement("img");
   listImg.src = cardData.item.PreviewListImageURL;
   listImg.classList.add('preview-img');
+  listImg.alt = cardData.item.name; 
+
   game_row_div.appendChild(listImg);
 
   spanClassess = ["col-name","col-date","col-size","col-actions"]; // set modified spanClasses to add for card creation
