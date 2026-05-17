@@ -1237,7 +1237,7 @@ function renderDetail(card,scrollPosition){
             <button type="button" class="fav-btn" aria-label="Toggle favorite">☆</button>
           </button>
         </div>
-        <div class="detail-media"><img class = "game-cardd" src="${imgSrc}" alt=${title}></div>
+        <div class="detail-media"><img class = "game-cardd" src="${imgSrc}" alt="${title}"></div>
         
 
         ${onlyGames}
